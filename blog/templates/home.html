@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+<html>
+    <head>
+        <title>Blog</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    </head>
+    <body>
+    <h1>Blog</h1>
+        <div class="blogstuff">
+            <div>
+                {% block content %}
+                    {% for item in values %}
+                        <div class="blogstuff">
+                            <div>
+                                <h3>Date{{item.date}}</h3>
+                                <p>{{item.entry}}</p>
+                            </div>
+                        </div>
+
+                    
+                    {% endfor %}
+                {% endblock %} 
+            </div>
+        </div>
+    </body>
+</html>
+
